@@ -65,7 +65,7 @@ posts.forEach( elements => cont.innerHTML += `
     <div class="post__header">
         <div class="post-meta">                    
             <div class="post-meta__icon">
-                <img class="profile-pic" src="${elements.author.images}5" alt="">                    
+                <img class="profile-pic" src="${elements.author.image}5" alt="">                    
             </div>
             <div class="post-meta__data">
                 <div class="post-meta__author">${elements.author.name}</div>
@@ -92,4 +92,25 @@ posts.forEach( elements => cont.innerHTML += `
     </div>            
 </div>
 
-`)
+`);
+
+// dichiaro il contenitore dei bottoni
+const btnLike = document.querySelectorAll("a");
+
+for (let i = 0; i < btnLike.length; i++) {
+
+    btnLike[i].addEventListener("click",
+
+        function () {
+
+            btnLike.forEach( likes => {
+                this.classList.toggle("like-button--liked");
+            }) 
+
+        }  
+        
+    )
+}
+
+
+ 
